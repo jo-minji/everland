@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에버랜드2</title>
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <script>
+        window.addEventListener('load',function(){
+            const container = document.getElementsByClassName('container')[0];
+            const controller = container.children[1];
+            const liList=controller.children; 
+
+            const picture = document.getElementsByClassName('picture')[0];
+            const pictureUl=picture.children[0];
+            const pictureLi=pictureUl.children 
+
+            let n=0 
+            let targetx =0 ;
+
+            for(let i=0; i<liList.length;i++){
+                liList[i].addEventListener('click',function(e){
+                    liList[i].index=i;
+
+                    e.preventDefault();
+
+                
+                    n=e.currentTarget.index
+                    console.log(n)
+
+
+                    for(let j=0; j<liList.length;j++){
+                        if(j==n){
+                            liList[j].classList.add('on');
+                            pictureLi[j].classList.add('active')
+                        }
+                        else{
+                            liList[j].classList.remove('on');
+                            pictureLi[j].classList.remove('active')
+
+                        }
+                        }
+                    
+                })
+            }
+
+
+            const nav =document.getElementById('nav');
+            const depth1ul=nav.children[0];
+            const depth1li=depth1ul.children;
+
+
+            for(let i=0;i<depth1li.length;i++){
+                    depth1li[i].index=i;
+                    depth1li[i].addEventListener('mouseenter',function(){
+                    depth1li[i].classList.add('on');
+                    depth1ul.classList.add('over')})
+                depth1li[i].addEventListener('mouseleave',function(){
+                    depth1ul.classList.remove('over')})
+
+            const depthA=depth1li[i].children[0];  
+            const depth2ul=depth1li[i].children[1];
+            const depth2li=depth2ul.children;   
+
+            depth1li[i].addEventListener('mouseenter',function(e){
+                e.currentTarget.classList.add('over')})
+                depth1li[i].addEventListener('mouseleave',function(e){
+                e.currentTarget.classList.remove('over')})
+            }
+        })
+
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div id="header_in">
+                <div class="info_mn">
+                    <ul>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">주차&오시는 길</a></li>
+                        <li><a href="#">연간이용권</a></li>
+                    </ul>
+                </div>
+                <div class="logo">
+                        <ul class="logo_l">
+                            <li>
+                                <a href="#">
+                                    <img src="/img/caribbeanbay.png">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/img/homebridge.png">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="/img/speedway.png">
+                                </a>
+                            </li>
+                        </ul>
+                    <h1 class="logo_mid"><img src="/img/logo.png"></h1>
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li>
+                            <a href="#">이용정보</a>
+                            <ul class="sub">
+                                <li><a href="">오늘의파크안내</a></li>
+                                <li><a href="">운영시간</a></li>
+                                <li><a href="">운휴정보</a></li>
+                                <li><a href="">편의시설</a></li>
+                                <li><a href="">공지사항</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">어뮤즈먼트 소개</a>
+                            <ul class="sub">
+                                <li><a href="">어트렉션</a></li>
+                                <li><a href="">주토피아</a></li>
+                                <li><a href="">가이드맵</a></li>
+                                <li><a href="">추천코스</a></li>
+                                <li><a href="">안전가이드북</a></li>
+                                <li><a href="">스마트줄서기</a></li>
+        
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">프로그램</a>
+                            <ul class="sub">
+                                <li><a href="">드림투어</a></li>
+                                <li><a href="">체험 프로그램</a></li>
+                                <li><a href="">동물사랑단</a></li>
+                                <li><a href="">식물사랑단</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">요금정보</a>
+                            <ul class="sub">
+                                <li><a href="">요금안내</a></li>
+                                <li><a href="">프로모션</a></li>
+                                <li><a href="">제휴카드</a></li>
+                                <li><a href="">이달의할인</a></li>
+                                <li><a href="">정기권</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">공연 및 이벤트</a>
+                            <ul class="sub">
+                                <li><a href="">공연</a></li>
+                                <li><a href="">이벤트</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">고객센터</a>
+                            <ul class="sub">
+                                <li><a href="">FAQ</a></li>
+                                <li><a href="">분실물 찾기</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="picture">
+                    <ul>
+                        <a  class="active" href="#"><img src="/img/main1.png"></a>
+                        <a href="#"><img src="/img/main2.jpg"></a>
+                        <a href="#"><img src="/img/main3.png"></a>
+                        <a href="#"><img src="/img/main4.png"></a>
+                        <a href="#"><img src="/img/main5.png"></a>
+                        <a href="#"><img src="/img/main6.jpeg"></a>
+                    </ul>
+                </div>
+                <ul class="controller">
+                    <li class="on"><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+            <h2>운휴정보</h2>
+            <div class="closed">
+                <div class="c_head">
+                    <div class="calender"><img src="./img/calender.png"></div>
+                    <div id="current_date">
+                        <script>
+                            const options = {year: 'numeric', month: 'long', day: 'numeric' };
+                            document.getElementById("current_date").innerHTML = new Date().toLocaleDateString('ko-KR', options);
+                        </script>
+                                                
+                    </div>
+                </div>
+                <div class="c_con">
+                    <ul>
+                        <li>
+                            <div><img src="/img/T-express.jpeg"></div>
+                            <b>T익스프레스</b>
+                            <pre>어트렉션|공사운휴</pre>
+                        </li>
+                        <li>
+                            <div><img src="/img/bird.jpeg"></div>
+                            <b>버드 파라다이스</b>
+                            <pre>어트렉션|공사운휴</pre>
+                        </li>
+                        <li>
+                            <div><img src="/img/thunder.jpeg"></div>
+                            <b>썬더폴스</b>
+                            <pre>어트렉션|공사운휴</pre>
+                        </li>
+                    </ul>
+                </div>
+               <a href="#" class='button'>more</a>
+            </div>
+
+            <h2>어트렉션</h2>
+            <div class="att">
+                <ul>
+                    <li>
+                        <div class="att_l">
+                            <img src="/img/baohouse.jpeg">
+                        </div>
+                        <ul class="att_r">
+                            <b>바오하우스</b>
+                            <li>
+                                <div><img src="/img/clock.png"></div>
+                                <span> 10:30 ~ 18:20</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="att_l">
+                            <img src="/img/columbus.jpeg">
+                        </div>
+                        <ul class="att_r">
+                            <b>콜롬버스 대탐험</b>
+                            <li>
+                                <div><img src="/img/tall.png"></div>
+                                <span>110cm~</span>
+                            </li>
+                            <li>
+                                <div><img src="/img/clock.png"></div>
+                                <span> 10:30 ~ 19:00</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="att_l">
+                            <img src="/img/double.jpeg">
+                        </div>
+                        <ul class="att_r">
+                            <b>더블 락스핀</b>
+                            <li>
+                                <div><img src="/img/tall.png"></div>
+                                <span>140cm~</span>
+                            </li>
+                            <li>
+                                <div><img src="/img/clock.png"></div>
+                                <span>13:00 ~ 19:00</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="att_l">
+                            <img src="/img/twist.jpeg">
+                        </div>
+                        <ul class="att_r">
+                            <b>랫츠 트위스트</b>
+                            <li>
+                                <div><img src="/img/tall.png"></div>
+                                <span>140-195cm</span>
+                            </li>
+                            <li>
+                                <div><img src="/img/clock.png"></div>
+                                <span>10:20 ~ 19:00</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="att_l">
+                            <img src="/img/rolling.jpg">
+                        </div>
+                        <ul class="att_r">
+                            <b>롤링 엑스 트레인</b>
+                            <li>
+                                <div><img src="/img/tall.png"></div>
+                                <span>120cm ~</span>
+                            </li>
+                            <li>
+                                <div><img src="/img/clock.png"></div>
+                                <span>15:30 ~ 19:00</span>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div class="att_l">
+                            <img src="/img/loyal.jpeg">
+                        </div>
+                        <ul class="att_r">
+                            <b>로얄 쥬빌리 캐로셀</b>
+                            <li>
+                                <div><img src="/img/tall.png"></div>
+                                <span>~100cm 보호자동반 필요</span>
+                            </li>
+                            <li>
+                                <div><img src="/img/clock.png"></div>
+                                <span> 10:00 ~ 19:00</span>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+
+            <h2>주토피아 체험</h2>
+            <div class="zoo">
+                <ul>
+                    <li>
+                        <div><img src="./img/zoo1.png"></div>
+                        <ul>
+                            <b>판다는 곰이 맞을까?</b>
+                            <li>판다가 보이는 특별한 교육장에서 푸바오의 성정과정을 알아보고, 판다의 특징을 배워보아요. <br>
+                                판다의 영양간식 워토우도 만들어보고 특별한 선물까지!
+                            </li>
+                            <a href="#">체험 예약하러 가기</a>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <b>질긴 풀도 쉽게 먹어요!</b>
+                            <li>오물오물 풀을 먹는 초식동물들을 만나보자<br/>
+                                질긴풀을 어떻게 잘 먹을 수 있는지 그 비밀에 대해서 알아볼까요
+                            </li>
+                            <a href="#">체험 예약하러 가기</a>
+                        </ul>
+                        <div><img src="./img/zoo2.png"></div>
+
+                    </li>
+                    <li>
+                        <div><img src="./img/zoo3.png"></div>
+                        <ul>
+                            <b>맹금 ENCOUNTER</b>
+                            <li>전문 사육사와 함께 맹금을 더욱 가까운 거리에서 만나요!<br/>
+                                맹금의 멋진 사냥 기술과 비행 모습을 관찰하고 사육사가 되어 맹금을 손 위에 올려 보아요
+                            </li>
+                            <a href="#">체험 예약하러 가기</a>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <h2>추천코스</h2>
+            <div class="recommend">
+                <div class="rec_in" >
+                    <div class="rec_1st"><img src="./img/rec1.png"></div>
+                    <div class="rec_2nd"><img src="./img/rec2.png"></div>
+                    <div class="rec_3rd"><img src="./img/rec3.png"></div>
+                    <div class="rec_4th"><img src="./img/rec4.png"></div>
+                </div>
+            </div>
+
+            <h2>할인혜택
+                <a href="">더보기+</a>
+            </h2>
+  
+            <div class="sale">
+                <ul>
+                    <li><img src="/img/S1.png"></li>
+                    <li><img src="/img/S2.png"></li>
+                    <li><img src="/img/S3.png"></li>
+                </ul>
+            </div>
+
+            <h2>Clips</h2>
+            <div class="clips">
+                <ul>
+                    <li>
+                        <iframe src="https://www.youtube.com/embed/QiQ0csGZ9Uk?si=hPp-BMY6xr4d1wPo&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+                    </li>
+                    <li><iframe src="https://www.youtube.com/embed/Uaeq_FlQm40?si=6G-TDbcJml-aDyiL&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></li>
+                    <li><iframe src="https://www.youtube.com/embed/yYxpsP7sO0c?si=BEcj75eQuhSgZPe4&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe></li>
+                </ul>
+            <div class="sns">
+                    <a href=""><img src="./img/sns1.png"></a>
+                    <a href=""><img src="./img/sns2.png"></a>
+                    <a href=""><img src="./img/sns3.png"></a>
+            </div>
+            </div>
+
+
+        </main>
+
+        <footer>
+            <ul>
+                <li>이용약관</li>
+                <li>개인정보 처리방침</li>
+                <li>방침개정 안내</li>
+                <li>이메일주소 무단수집 거부</li>
+                <li>입찰공고</li>
+            </ul>
+            <li>
+                고객센터 : 031-320-5000(유료, 09:00 ~ 18:00)<br/>
+                경기도 용인시 처인구 포곡읍 에버랜드로 199 삼성물산(주) <br/>
+                대표이사:정해린 사업자 등록번호 : 135-85-04288 <br/>
+                통신판매업 신고번호 : 제 2006-용인처인-0216호 <br/>
+                사업자정보확인
+            </li>
+        </footer>
+    </div>
+</body>
+</html>
